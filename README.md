@@ -4,7 +4,7 @@ Voice documentation for trade technicians (HVAC/electrical/plumbing). Speak a jo
 
 Part of the Scripa family: one profession-specific voice-documentation product per vertical, same underlying engine (speak → structure → generate), modeled on voize / Heidi Health / Tandem Health.
 
-**Live demo:** _add your Vercel URL here after deploying_
+**Live demo:** https://scripav2.vercel.app
 
 ## What's in this repo
 

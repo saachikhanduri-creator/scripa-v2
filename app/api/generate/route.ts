@@ -25,8 +25,8 @@ export async function POST(request: Request) {
       messages: [{ role: "user", content: transcript }],
     });
 
-    const block = message.content[0];
-    if (block.type !== "text") {
+    const block = message.content.find((b) => b.type === "text");
+    if (!block || block.type !== "text") {
       throw new Error("Unexpected response format from model.");
     }
 
