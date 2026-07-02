@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Scripa · Trades
 
-## Getting Started
+Voice documentation for trade technicians (HVAC/electrical/plumbing). Speak a job recap, get back a structured job/inspection report plus a client-ready plain-English summary — one AI call, two outputs.
 
-First, run the development server:
+Part of the Scripa family: one profession-specific voice-documentation product per vertical, same underlying engine (speak → structure → generate), modeled on voize / Heidi Health / Tandem Health.
+
+**Live demo:** _add your Vercel URL here after deploying_
+
+## What's in this repo
+
+- `app/page.tsx` — mobile-first UI (record/type → review → generate → structured report + client summary)
+- `app/api/generate/route.ts` — server-side API route that calls the Claude API with structured outputs
+- `lib/prompt.ts` — system prompt + JSON schema for the trade job report
+- `RESEARCH.md` — go-niche case for trades (market, ICP, willingness to pay, competitive scan)
+- `ONE_PAGER.md` — positioning, ICP, pricing, GTM
+
+## Running locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in **Chrome** (best support for the browser mic/speech-to-text). Requires an `ANTHROPIC_API_KEY` in `.env.local` (see `.env.example`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Push to GitHub, import into [Vercel](https://vercel.com/new), and set the `ANTHROPIC_API_KEY` environment variable in the Vercel project settings.
